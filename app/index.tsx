@@ -12,31 +12,31 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const InfoItem = memo(({ icon, text, onPress }) => (
+const InfoItem = memo(({ icon, text, onPress }: { icon: string, text: string, onPress: () => void }) => (
   <TouchableOpacity 
     style={styles.infoRow} 
     onPress={onPress}
     disabled={!onPress}
   >
-    <Ionicons name={icon} size={22} color="#555" style={styles.infoIcon} />
+    <Ionicons name={icon as any} size={22} color="#555" style={styles.infoIcon} />
     <Text style={styles.infoText}>{text}</Text>
   </TouchableOpacity>
 ));
 
-const SectionTitle = memo(({ title }) => (
+const SectionTitle = memo(({ title }: { title: string }) => (
   <>
     <View style={styles.line} />
     <Text style={styles.title}>{title}</Text>
   </>
 ));
 
-const SkillItem = memo(({ skill }) => (
+const SkillItem = memo(({ skill }: { skill: string }) => (
   <View style={styles.skillItem}>
     <Text style={styles.skillText}>{skill}</Text>
   </View>
 ));
 
-const ExperienceItem = memo(({ text }) => (
+const ExperienceItem = memo(({ text }: { text: string }) => (
   <View style={styles.experienceItem}>
     <View style={styles.bullet} />
     <Text style={styles.experience}>{text}</Text>
