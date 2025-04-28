@@ -5,7 +5,7 @@ export const analyzeSentiment = async (text: string) => {
   try {
     // Try to use Google API first
     try {
-      const API_KEY = "AIzaSyAuGk0WwWtB1vmItT4PegASMUiQUhC22Ao"; // Replace with your actual API key
+      const API_KEY = ""; // Replace with your actual API key
       
       const response = await axios.post(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${API_KEY}`,
